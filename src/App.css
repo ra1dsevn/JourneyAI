@@ -1,0 +1,145 @@
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 主容器样式 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 标题样式 */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+/* 输入区域样式 - 确保在顶部 */
+.input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* 调整输入框和按钮的宽度 */
+.input-container .ant-input,
+.input-container .ant-btn {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Itinerary和地图容器样式 */
+.itinerary-map-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 400px;
+}
+
+/* Itinerary步骤样式 */
+.itinerary-steps {
+  flex: 1;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.itinerary-steps h2 {
+  font-size: 1.5em;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.itinerary-steps h3 {
+  font-size: 1.3em;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.itinerary-steps .ant-list-item {
+  padding: 8px 0;
+  font-size: 1em;
+  color: #555;
+}
+
+/* 地图容器样式 */
+.map-container {
+  flex: 1;
+  min-width: 600px;
+  height: 600px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  overflow: visible;
+}
+
+/* Spots 容器样式 */
+.spots-container {
+  margin-top: 24px;
+}
+
+.spots-container h3 {
+  font-size: 1.3em;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.spot-item {
+  margin-bottom: 16px;
+  padding: 12px;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+.spot-name {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #1890ff;
+}
+
+.spot-details {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.spot-details div {
+  margin-bottom: 4px;
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .itinerary-map-container {
+    flex-direction: column;
+  }
+
+  .itinerary-steps,
+  .map-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .map-container {
+    min-height: 600px;
+  }
+}
