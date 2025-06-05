@@ -1,0 +1,121 @@
+
+            <!doctype html>
+            <html>
+            <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+                <style>
+                html,
+                body,
+                #container {
+                    width: 100%;
+                    height: 100%;
+                }
+                </style>
+                <title>根据规划数据绘制步行路线</title>
+                <script type="text/javascript">
+                    window._AMapSecurityConfig = {
+                      securityJsCode: "e0d9ecd2f840a7140dd370649592a6e8",
+                    };
+                  </script>
+                <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" /> <script src="https://webapi.amap.com/maps?v=1.4.15&key=02f90d4b9c0cb23602e9a02786971af7&plugin=AMap.PolyEditor"></script>
+                <script src="https://webapi.amap.com/maps?v=1.4.10&key=02f90d4b9c0cb23602e9a02786971af7&plugin=AMap.Walking"></script>
+                <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+            </head>
+            <body>
+            <div id="container"></div>
+            <script type="text/javascript">
+                var map = new AMap.Map("container", {
+                    center: [116.397559, 39.89621],
+                    zoom: 14,
+                    lang:"en"
+                });
+
+                // 当前示例的目标是展示如何根据规划结果绘制路线，因此walkOption为空对象
+                var walkingOption = {}
+
+                // 步行导航
+                var walking = new AMap.Walking(walkingOption);
+                var data = [[121.48465718720516, 31.241185858189375], [121.48010601643348, 31.23951138603159], [121.48569788029586, 31.24529724127721], [121.48031409041563, 31.246359564738338], [121.48025429417116, 31.267815372400584], [121.4861376378609, 31.239757755232127]];
+            // 根据起终点坐标规划步行路线
+                for (var i = 0; i < data.length - 1; i++) {
+                    (function(index) { // 使用闭包确保正确的索引
+                        walking.search(data[index], data[index + 1], function(status, result) {
+                            if (status === 'complete') {
+                                if (result.routes && result.routes.length) {
+                                    drawRoute(result.routes[0], index); // 传递当前索引
+                                    console.log('绘制步行路线完成');
+                                }
+                            } else {
+                                console.error('步行路线数据查询失败: ' + result);
+                            }
+                        });
+                    })(i);
+                }
+
+                function drawRoute(route, index) {
+                    var path = parseRouteToPath(route);
+
+                    // 创建起点标记
+                    if (index === 0) {
+                        var startMarker = new AMap.Marker({
+                            position: path[0],
+                            icon: 'https://webapi.amap.com/theme/v1.3/markers/n/start.png',
+                            map: map
+                        });
+                    }
+
+                    // 创建途经点标记
+                    if (index > 0 && index < data.length - 1) {
+                        var viaMarker = new AMap.Marker({
+                            position: path[index], // 途经点的实际位置
+                            icon: 'https://a.amap.com/jsapi_demos/static/demo-center/icons/dir-via-marker.png',
+                            map: map
+                        });
+                    }
+
+                    // 创建终点标记
+                    if (index === data.length - 2) {
+                        var endMarker = new AMap.Marker({
+                            position: path[path.length - 1],
+                            icon: 'https://webapi.amap.com/theme/v1.3/markers/n/end.png',
+                            map: map
+                        });
+                    }
+
+                    // line
+                    var routeLine = new AMap.Polyline({
+                        path: path,
+                        isOutline: true,
+                        outlineColor: '#ffeeee',
+                        borderWeight: 2,
+                        strokeWeight: 5,
+                        strokeColor: '#0091ff',
+                        lineJoin: 'round'
+                    });
+
+                    routeLine.setMap(map);
+
+                    // 调整视野达到最佳显示区域
+                    var markers = [startMarker, endMarker, viaMarker].filter(marker => marker); // 过滤掉未定义的标记
+                    map.setFitView(markers.concat(routeLine)); // 调整视野
+                }
+
+                // 解析WalkRoute对象，构造成AMap.Polyline的path参数需要的格式
+                function parseRouteToPath(route) {
+                    var path = [];
+
+                    for (var i = 0; i < route.steps.length; i++) {
+                        var step = route.steps[i];
+
+                        for (var j = 0; j < step.path.length; j++) {
+                            path.push(step.path[j]);
+                        }
+                    }
+
+                    return path;
+                }
+            </script>
+            </body>
+            </html> 

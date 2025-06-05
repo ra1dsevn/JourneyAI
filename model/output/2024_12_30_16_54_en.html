@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_51cbc7a9d7be02ac88bbcf996c0aeed7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_51cbc7a9d7be02ac88bbcf996c0aeed7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_51cbc7a9d7be02ac88bbcf996c0aeed7 = L.map(
+                "map_51cbc7a9d7be02ac88bbcf996c0aeed7",
+                {
+                    center: [31.240560001339997, 121.49011497773999],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7bdbc4d3b866b8a8163d51b49deae907 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_7bdbc4d3b866b8a8163d51b49deae907.addTo(map_51cbc7a9d7be02ac88bbcf996c0aeed7);
+        
+    
+            var marker_16035bcff567b4dbbc3b18ac2f1577f1 = L.marker(
+                [31.23812, 121.495877],
+                {}
+            ).addTo(map_51cbc7a9d7be02ac88bbcf996c0aeed7);
+        
+    
+            var icon_65d11514e331948712dcf93f12c701d0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_16035bcff567b4dbbc3b18ac2f1577f1.setIcon(icon_65d11514e331948712dcf93f12c701d0);
+        
+    
+        var popup_7b3d65a4438663fe5a52f8505571e844 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_60370680ff8df1570a4270fa8b04df8f = $(`<div id="html_60370680ff8df1570a4270fa8b04df8f" style="width: 100.0%; height: 100.0%;">0 - Pudong Art Museum</div>`)[0];
+                popup_7b3d65a4438663fe5a52f8505571e844.setContent(html_60370680ff8df1570a4270fa8b04df8f);
+            
+        
+
+        marker_16035bcff567b4dbbc3b18ac2f1577f1.bindPopup(popup_7b3d65a4438663fe5a52f8505571e844)
+        ;
+
+        
+    
+    
+            var marker_79e9617f21d20c4e4242b83030f4eee4 = L.marker(
+                [31.2433137205, 121.4901655755],
+                {}
+            ).addTo(map_51cbc7a9d7be02ac88bbcf996c0aeed7);
+        
+    
+            var icon_b88a42eb7402f34202b6284f8334b7d7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_79e9617f21d20c4e4242b83030f4eee4.setIcon(icon_b88a42eb7402f34202b6284f8334b7d7);
+        
+    
+        var popup_71366106f2172b7ddc1d4b5c67233afc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_95d762cc4bc7907c9dd4a9122cacc4b8 = $(`<div id="html_95d762cc4bc7907c9dd4a9122cacc4b8" style="width: 100.0%; height: 100.0%;">1 - Waibaidu Bridge</div>`)[0];
+                popup_71366106f2172b7ddc1d4b5c67233afc.setContent(html_95d762cc4bc7907c9dd4a9122cacc4b8);
+            
+        
+
+        marker_79e9617f21d20c4e4242b83030f4eee4.bindPopup(popup_71366106f2172b7ddc1d4b5c67233afc)
+        ;
+
+        
+    
+    
+            var marker_52a4c75563dddd4859ae930c65da5036 = L.marker(
+                [31.2443923087, 121.4848007947],
+                {}
+            ).addTo(map_51cbc7a9d7be02ac88bbcf996c0aeed7);
+        
+    
+            var icon_9c17b16132b4d68d8c3748e0314255d2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_52a4c75563dddd4859ae930c65da5036.setIcon(icon_9c17b16132b4d68d8c3748e0314255d2);
+        
+    
+        var popup_7d360fb1233aee9fdbc2e3546c81cdc4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_31b74cec98373971e409c83cb12a8bb2 = $(`<div id="html_31b74cec98373971e409c83cb12a8bb2" style="width: 100.0%; height: 100.0%;">2 - Shanghai Postal Museum</div>`)[0];
+                popup_7d360fb1233aee9fdbc2e3546c81cdc4.setContent(html_31b74cec98373971e409c83cb12a8bb2);
+            
+        
+
+        marker_52a4c75563dddd4859ae930c65da5036.bindPopup(popup_7d360fb1233aee9fdbc2e3546c81cdc4)
+        ;
+
+        
+    
+    
+            var marker_9c7b84a095a901d64ca27736c275f8a7 = L.marker(
+                [31.239203552600003, 121.4891282174],
+                {}
+            ).addTo(map_51cbc7a9d7be02ac88bbcf996c0aeed7);
+        
+    
+            var icon_c1b69847f3afad94f51de525bac23113 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9c7b84a095a901d64ca27736c275f8a7.setIcon(icon_c1b69847f3afad94f51de525bac23113);
+        
+    
+        var popup_1e0203f5d9f6c62be2aa316331ba51d0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f7ce178e94d033e89a808f04b56a3712 = $(`<div id="html_f7ce178e94d033e89a808f04b56a3712" style="width: 100.0%; height: 100.0%;">3 - Shanghai Peace Hotel</div>`)[0];
+                popup_1e0203f5d9f6c62be2aa316331ba51d0.setContent(html_f7ce178e94d033e89a808f04b56a3712);
+            
+        
+
+        marker_9c7b84a095a901d64ca27736c275f8a7.bindPopup(popup_1e0203f5d9f6c62be2aa316331ba51d0)
+        ;
+
+        
+    
+    
+            var marker_d07d9e87e0a8a6723d3fab386601e6d2 = L.marker(
+                [31.2377704249, 121.4906033011],
+                {}
+            ).addTo(map_51cbc7a9d7be02ac88bbcf996c0aeed7);
+        
+    
+            var icon_2f39ab29ebfaa049ef6134978dad120f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_d07d9e87e0a8a6723d3fab386601e6d2.setIcon(icon_2f39ab29ebfaa049ef6134978dad120f);
+        
+    
+        var popup_a34f3c1b6ca5967fa9ee963361b9132f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_32b435923242fcd991f6724deabf4daf = $(`<div id="html_32b435923242fcd991f6724deabf4daf" style="width: 100.0%; height: 100.0%;">4 - The Bund</div>`)[0];
+                popup_a34f3c1b6ca5967fa9ee963361b9132f.setContent(html_32b435923242fcd991f6724deabf4daf);
+            
+        
+
+        marker_d07d9e87e0a8a6723d3fab386601e6d2.bindPopup(popup_a34f3c1b6ca5967fa9ee963361b9132f)
+        ;
+
+        
+    
+    
+            var poly_line_7f5d27db58f53bede25064046f81a52f = L.polyline(
+                [[31.23812, 121.495877], [31.2433137205, 121.4901655755], [31.2443923087, 121.4848007947], [31.239203552600003, 121.4891282174], [31.2377704249, 121.4906033011]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_51cbc7a9d7be02ac88bbcf996c0aeed7);
+        
+</script>
+</html>

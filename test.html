@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>步行路线规划测试</title>
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+            securityJsCode: "e0d9ecd2f840a7140dd370649592a6e8",
+        };
+    </script>
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=02f90d4b9c0cb23602e9a02786971af7&plugin=AMap.Walking"></script>
+    <script>
+        function initMap() {
+            var map = new AMap.Map('map', {
+                zoom: 13,
+                center: [116.397428, 39.90923] // 北京市中心
+            });
+
+            testWalkingRoute(map);
+        }
+
+        function testWalkingRoute(map) {
+            AMap.plugin('AMap.Walking', function() {
+                var walking = new AMap.Walking({
+                    map: map,
+                    panel: "panel"
+                });
+
+                var points = [
+                    { keyword: '北京市地震局（公交站）', city: '北京' },
+                    { keyword: '亦庄文化园（地铁站）', city: '北京' }
+                ];
+
+                walking.search(points, function(status, result) {
+                    console.log('步行路线规划返回结果:', status, result);
+                    if (status === 'complete') {
+                        console.log('步行路线规划成功:', result);
+                        alert('API Key 有效，步行路线规划成功！');
+                    } else {
+                        console.error('步行路线规划失败:', status, result);
+                        alert('API Key 无效或步行路线规划失败，请检查！');
+                    }
+                });
+            });
+        }
+
+        window.onload = initMap;
+    </script>
+</head>
+<body>
+    <div id="map" style="width: 100%; height: 400px;"></div>
+    <div id="panel" style="width: 100%; height: 200px;"></div>
+</body>
+</html>
