@@ -9,9 +9,9 @@ class OpenaiCall:
     def __init__(self):
         # Configure the base URL and API key
         # openai.api_base = 'https://api.gptapi.us/v1/'
-        # openai.api_key = 'sk-JOpnCa6jfYITgXhB5c0b7cD3A36346B683271132Ac1cA793'
+        # openai.api_key = 'sk-xxx'
         openai.api_base = 'https://xiaoai.plus/v1'
-        openai.api_key = 'sk-DTEn4UWDbsYhVRvwyeZWH1Q76lO6q9sY2nz2nVGOboV5pdfL'
+        openai.api_key = 'sk-xxx'
 
     # 在 OpenaiCall.chat 中
     def chat(self, messages, model="gpt-4o-mini", temperature=0, max_retries=5):
