@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+JourneyAI
+项目概述
+JourneyAI 是一个基于人工智能的旅行规划工具，通过先进的语言模型为用户提供个性化的旅行推荐和行程规划，针对用户偏好（如预算、旅行风格、兴趣）生成高质量建议。
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+功能特性
 
-## Available Scripts
+个性化推荐：根据用户输入（如预算、兴趣、旅行目的地）生成定制化行程。
+高效交互：提供精准、快速的旅行建议。
+多平台支持：支持 USA 和加拿大旅行政策查询，计划扩展至更多地区。
 
-In the project directory, you can run:
+技术栈
 
-### `npm start`
+核心框架：LangChain
+编程语言：Python
+前端：React（Node.js）
+依赖管理：pip（requirements.txt）、npm
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+安装指南
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+克隆仓库：git clone https://github.com/ra1dsevn/JourneyAI.git
+cd JourneyAI
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+安装后端依赖：pip install -r requirements.txt
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+安装前端依赖：cd itinera-frontend
+npm install
+cd ..
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+使用方法
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+启动后端服务：python main.py
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+启动前端服务：cd itinera-frontend
+npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+访问前端：
+打开浏览器，进入 http://localhost:3000。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+输入旅行相关查询（如“为预算 $1000 的家庭设计 3 天纽约行程”）。
+输出示例：纽约 3 天行程：
+第 1 天：参观自由女神像、中央公园...
+第 2 天：探索大都会博物馆、时代广场...
+第 3 天：布鲁克林大桥、当地美食体验...
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+贡献指南
+欢迎贡献！请遵循以下步骤：
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Fork 仓库。
+创建特性分支（git checkout -b feature/xxx）。
+提交更改（git commit -m "添加 xxx 功能"）。
+推送至分支（git push origin feature/xxx）。
+创建 Pull Request。
 
-### Making a Progressive Web App
+注意事项
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+确保 itinera-frontend 目录包含 package.json。
+需 GPU 环境支持部分功能，推荐使用云端服务。
 
-### Advanced Configuration
+联系方式
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+作者：ra1dsevn
+邮箱：ra1dsevn@gmail.com
+问题反馈：请在 GitHub Issues 提交。
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+许可
+MIT License
